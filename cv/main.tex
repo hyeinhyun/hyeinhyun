@@ -57,10 +57,12 @@
 \newcommand{\sep}{\enspace\textbar\enspace}
 % \entry{left}{right}   : one line, right part flush right
 \newcommand{\entry}[2]{\par\noindent#1\hfill#2\par}
-% \org{Company}
-\newcommand{\org}[1]{\par\vspace{3pt}\noindent{\bfseries\scshape #1}\par}
-% \role{Position}{Location | Period}
-\newcommand{\role}[2]{\entry{\textbf{\textit{#1}}}{\textbf{#2}}}
+% \job{Company}{Position}{Location | Period} : company + role on one line
+\newcommand{\job}[3]{\par\vspace{3pt}%
+  \entry{{\fontsize{11}{13}\selectfont\bfseries\scshape #1}%
+         \enspace{\color{black!45}\textbar}\enspace\textit{#2}}%
+        {\textbf{#3}}%
+  \vspace{1pt}}
 % \project{Title}{Period}
 \newcommand{\project}[2]{\par\vspace{4pt}\entry{\textbullet\ #1}{\textit{#2}}}
 % \titled{Bold title}{Bold period}
@@ -79,8 +81,7 @@ Research Engineer of Samsung Research, Global AI Center\par
 % ---------- Experience ----------
 \section{Professional Experiences}
 
-\org{Samsung Research}
-\role{AI Research Engineer in GAIC (Global AI Center)}{Seoul, Korea \textbar\ 2021.9 -- Present}
+\job{Samsung Research}{AI Research Engineer, Global AI Center (GAIC)}{Seoul, Korea \textbar\ 2021.9 -- Present}
 
 \project{On-device AI model development for new Samsung devices (3B)}{2025.10 -- Present}
 \begin{itemize}
@@ -118,9 +119,8 @@ Research Engineer of Samsung Research, Global AI Center\par
   \item Distillation model from ResNet-101 backbone OCR model to ResNet-18 backbone OCR model
 \end{itemize}
 
-\vspace{4pt}
-\org{Hyundai Card}
-\role{Deep-learning Researcher}{Seoul, Korea \textbar\ 2021.3 -- 2021.6}
+\vspace{6pt}
+\job{Hyundai Card}{Deep Learning Researcher}{Seoul, Korea \textbar\ 2021.3 -- 2021.6}
 \project{Research DL model for table data}{}
 \begin{itemize}
   \item Developing LSTM sequential model for customer demand forecasting using over 1 million
