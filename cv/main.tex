@@ -52,6 +52,7 @@
 % Sub-bullets ("-")
 \setlist[itemize]{label=-, leftmargin=2.6em, labelsep=0.9em,
   topsep=1pt, itemsep=0pt, parsep=0pt, partopsep=0pt}
+\setlist[itemize,2]{label=\textendash, leftmargin=1.6em, labelsep=0.6em, topsep=0pt}
 
 \newcommand{\sep}{\enspace\textbar\enspace}
 % \entry{left}{right}   : one line, right part flush right
@@ -81,17 +82,29 @@ Research Engineer of Samsung Research, Global AI Center\par
 \org{Samsung Research}
 \role{AI Research Engineer in GAIC (Global AI Center)}{Seoul, Korea \textbar\ 2021.9 -- Present}
 
-\project{Document Understanding with VLM}{2023.12 -- Present}
+\project{On-device AI model development for new Samsung devices (3B)}{2025.10 -- Present}
 \begin{itemize}
-  \item Developing document retrieval model based on customized tiny LLaVA model
-  \item Developing model for new device of Samsung (in progress)
+  \item In charge of post-training: RL, OPD, MoPD
 \end{itemize}
 
-\project{Post-OCR correction with visual feature, linguistic knowledge}{2023.8 -- 2023.12}
+\project{In-house Multimodal RAG system development \& service launch}{2024.10 -- 2025.10}
 \begin{itemize}
-  \item Correcting OCR detection box region errors with linguistic knowledge
-  \item Developing algorithm of a detection box direction selection using transformers-based LM
-  \item Patent registration (in progress)
+  \item \textbf{Average monthly active users (MAU): 1,500} (launched 2025.12, as of 2026.06)
+  \item System infrastructure: designed an integrated architecture of a LangGraph-based RAG
+        pipeline and a FastAPI + Celery + Milvus + PostgreSQL backend
+  \item \textbf{Improved retrieval performance by 20\%} (in-house document benchmark)
+  \begin{itemize}
+    \item +12\% by enhancing hybrid search (built a corpus of 350K Korean documents)
+    \item Additional +8\% by applying a retrieval algorithm that integrates global \& local
+          embeddings and developing an image captioner specialized for tables and charts
+  \end{itemize}
+\end{itemize}
+
+\project{VLM-based document retrieval model development (0.6B)}{2023.10 -- 2024.10}
+\begin{itemize}
+  \item \textbf{Deployed on Samsung devices (Galaxy S25 and later)}
+  \item Developed and applied a post-OCR correction algorithm using visual features and
+        linguistic knowledge
 \end{itemize}
 
 \project{Application about business card entity extraction project}{2023.3 -- 2023.7}
@@ -133,6 +146,16 @@ Research Engineer of Samsung Research, Global AI Center\par
   \item \textbf{\textit{JiHae Kim*, HyeIn Hyun*}} \textit{and Hyuk-Yoon Kwon}
         (*Equal Contribution), \textit{DBR} 35.1, pp.~35--55 (2019)
   \item Evaluate the performance of key-value stores (Redis, BerkeleyDB, LevelDB, RocksDB) for Tweet data
+\end{itemize}
+
+% ---------- Patent ----------
+\section{Patent}
+
+\titled{멀티모달 학습 기반 E-스포츠 하이라이트 영상 자동생성 방법 및 이를 수행하기 위한 장치}{}
+\begin{itemize}
+  \item \textit{Method for automatically generating e-sports highlight videos based on multimodal
+        learning, and apparatus for performing the same}
+  \item KR 10-2021-0093522
 \end{itemize}
 
 % ---------- Education ----------
