@@ -1,0 +1,220 @@
+% ==============================================================
+%  Hyein Hyun - CV
+%  Overleaf: Menu -> Compiler -> XeLaTeX  (recommended)
+%  pdfLaTeX also compiles (fallback fonts are used for Korean).
+% ==============================================================
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[a4paper,top=1.7cm,bottom=1.7cm,left=1.9cm,right=1.9cm]{geometry}
+\usepackage{iftex}
+
+% ---------- Fonts (English: Times-like / Korean: Gothic) ----------
+\usepackage{kotex}
+\ifXeTeX
+  \setmainfont{texgyretermes}[
+    Extension      = .otf,
+    UprightFont    = *-regular,
+    BoldFont       = *-bold,
+    ItalicFont     = *-italic,
+    BoldItalicFont = *-bolditalic]
+  \IfFontExistsTF{Noto Sans CJK KR}{%
+    \setmainhangulfont{Noto Sans CJK KR}[
+      BoldFont = {Noto Sans CJK KR Bold}, Scale = 0.92]
+  }{%
+    \setmainhangulfont{UnDotum.ttf}[BoldFont = UnDotumBold.ttf]
+  }
+  % Use the English font for ( ) , . : - etc. even next to Korean
+  \xetexkofontregime{latin}
+\else
+  \usepackage[T1]{fontenc}
+  \usepackage{tgtermes}
+\fi
+
+% ---------- Layout helpers ----------
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage[hidelinks]{hyperref}
+\urlstyle{same}
+
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\linespread{1.05}
+\frenchspacing
+
+% Section: upper-case title with a rule underneath
+\titleformat{\section}
+  {\fontsize{12.5}{15}\selectfont}{}{0pt}{\MakeUppercase}
+  [{\vspace{-4pt}\color{black!60}\titlerule[0.6pt]}]
+\titlespacing*{\section}{0pt}{10pt}{5pt}
+
+% Sub-bullets ("-")
+\setlist[itemize]{label=-, leftmargin=2.6em, labelsep=0.9em,
+  topsep=1pt, itemsep=0pt, parsep=0pt, partopsep=0pt}
+
+\newcommand{\sep}{\enspace\textbar\enspace}
+% \entry{left}{right}   : one line, right part flush right
+\newcommand{\entry}[2]{\par\noindent#1\hfill#2\par}
+% \org{Company}
+\newcommand{\org}[1]{\par\vspace{3pt}\noindent{\bfseries\scshape #1}\par}
+% \role{Position}{Location | Period}
+\newcommand{\role}[2]{\entry{\textbf{\textit{#1}}}{\textbf{#2}}}
+% \project{Title}{Period}
+\newcommand{\project}[2]{\par\vspace{4pt}\entry{\textbullet\ #1}{\textit{#2}}}
+% \titled{Bold title}{Bold period}
+\newcommand{\titled}[2]{\par\vspace{3pt}\entry{\textbf{#1}}{\textbf{#2}}}
+
+% ==============================================================
+\begin{document}
+
+% ---------- Header ----------
+{\fontsize{24}{28}\selectfont\bfseries Hyein Hyun}\par\vspace{3pt}
+Research Engineer of Samsung Research, Global AI Center\par
+\href{mailto:hyunhi1123@gmail.com}{\underline{hyunhi1123@gmail.com}}%
+\sep\href{https://github.com/hyeinhyun}{https://github.com/hyeinhyun}%
+\sep 현혜인\par
+
+% ---------- Experience ----------
+\section{Professional Experiences}
+
+\org{Samsung Research}
+\role{AI Research Engineer in GAIC (Global AI Center)}{Seoul, Korea \textbar\ 2021.9 -- Present}
+
+\project{Document Understanding with VLM}{2023.12 -- Present}
+\begin{itemize}
+  \item Developing document retrieval model based on customized tiny LLaVA model
+  \item Developing model for new device of Samsung (in progress)
+\end{itemize}
+
+\project{Post-OCR correction with visual feature, linguistic knowledge}{2023.8 -- 2023.12}
+\begin{itemize}
+  \item Correcting OCR detection box region errors with linguistic knowledge
+  \item Developing algorithm of a detection box direction selection using transformers-based LM
+  \item Patent registration (in progress)
+\end{itemize}
+
+\project{Application about business card entity extraction project}{2023.3 -- 2023.7}
+\begin{itemize}
+  \item Developing business entity extraction model based on LiLT, LayoutLMv3
+  \item Customizing model for Korean and English business card dataset
+\end{itemize}
+
+\project{Light-weight OCR model using distillation}{2022.4 -- 2022.12}
+\begin{itemize}
+  \item Distillation model from ResNet-101 backbone OCR model to ResNet-18 backbone OCR model
+\end{itemize}
+
+\vspace{4pt}
+\org{Hyundai Card}
+\role{Deep-learning Researcher}{Seoul, Korea \textbar\ 2021.3 -- 2021.6}
+\project{Research DL model for table data}{}
+\begin{itemize}
+  \item Developing LSTM sequential model for customer demand forecasting using over 1 million
+        time-series customer consumption datasets
+  \item Research proper self-supervised learning method for understanding sparse table data
+\end{itemize}
+
+% ---------- Publication ----------
+\section{Publication}
+
+\titled{Multimodal learning model based on video--audio--chat feature fusion for detecting e-sports highlights}{}
+\begin{itemize}
+  \item \textbf{\textit{Gang-Min Park*, Hye-In Hyun*}}, \textit{and Hyuk-Yoon Kwon}
+        (*Equal Contribution), \textit{Applied Soft Computing}, vol.~126 (2022)
+        (SCIE: IF = 8.7)
+  \item Propose a new multimodal learning model for highlight detection from e-sports videos
+  \item Design the LSTM-CNN model based on the definition of effective features and a balanced
+        integration of image, audio, text features
+\end{itemize}
+
+\titled{A Performance Evaluation of Key-Value Stores for Storing and Processing Tweet Data}{}
+\begin{itemize}
+  \item \textbf{\textit{JiHae Kim*, HyeIn Hyun*}} \textit{and Hyuk-Yoon Kwon}
+        (*Equal Contribution), \textit{DBR} 35.1, pp.~35--55 (2019)
+  \item Evaluate the performance of key-value stores (Redis, BerkeleyDB, LevelDB, RocksDB) for Tweet data
+\end{itemize}
+
+% ---------- Education ----------
+\section{Education}
+
+\titled{Seoul National University of Science and Technology (SNUST)}{}
+\entry{B.S., \textit{Industrial Engineering (IT Management, Advisor: Prof.\ Hyuk-Yoon Kwon)}}%
+      {\textbf{Seoul, Korea \textbar\ 2016.3 -- 2021.2}}
+\begin{itemize}
+  \item GPA 4.26/4.5, graduated with highest honor
+\end{itemize}
+
+% ---------- Scholarships ----------
+\section{Scholarships}
+\begin{itemize}
+  \item Academic scholarship (2016 Spring, 2016 Winter, 2017 Spring, 2020 Spring, 2020 Winter)
+  \item National science \& technology scholarship (2018 Spring, 2018 Winter)
+\end{itemize}
+
+% ---------- Honors ----------
+\section{Honors and Awards}
+
+\titled{산업공학 프로젝트 경진대회 대상}{2021}
+\begin{itemize}
+  \item 과학기술정보통신부장관상 수상
+  \item Propose a multimodal model with 5\% more accuracy than baseline model
+  \item Develop a webpage that automatically extracts highlights in 3 minutes of video
+        for 30--50 minutes
+\end{itemize}
+
+\titled{Capstone Design 1\textsuperscript{st} Prize}{2021}
+\begin{itemize}
+  \item Propose an e-sports highlights extraction using video, chat, audio data
+\end{itemize}
+
+\titled{2021 훈민정음 한국어 음성·자연어 인공지능 경진대회}{2021.9 -- 2021.11}
+\begin{itemize}
+  \item Messenger data (informal document) summarization modeling
+  \item Advanced to finals (8th/60)
+\end{itemize}
+
+% ---------- Research interest ----------
+\section{Research Interest}
+\textbf{Multimodal Learning}: Vision Language Modeling\par
+\textbf{Document Intelligence}: Document Understanding, Scene Text Recognition\par
+
+% ---------- Skills ----------
+\section{Programming Skills}
+\textbf{Advanced}: Python (PyTorch, TensorFlow), Java\par
+\textbf{Moderate}: C++, C\par
+
+% ---------- Other experience ----------
+\section{Other Experience}
+
+\titled{Open-source OSLO project}{2022.9 -- 2023.5}
+\begin{itemize}
+  \item Open source project of GPU optimization technologies for large-scale modeling
+  \item \url{https://github.com/EleutherAI/oslo}
+\end{itemize}
+
+\titled{Associate Architecture (in-company certificate)}{2023.1 -- 2023.2}
+\begin{itemize}
+  \item Design SW architecture about IoT smart home system
+\end{itemize}
+
+\titled{2020 AI BootCamp (Naver)}{2020.9 -- 2021.3}
+\begin{itemize}
+  \item Fundamental study of AI technology
+\end{itemize}
+
+\titled{Internship of Naver Corp.}{2020.8}
+\begin{itemize}
+  \item AI modeling for OOD (out-of-distribution) classification of Naver shopping reviews
+  \item Benefit of advance to the finals
+\end{itemize}
+
+\titled{BS Intern of BigBase Lab}{2018.9 -- 2021.2}
+\begin{itemize}
+  \item Research about multimodal learning, database
+  \item OOD (out-of-distribution) project with LG CNS
+\end{itemize}
+
+\titled{Exchange Student of China, Taiwan}{2019.2 -- 2020.2}
+
+\end{document}
