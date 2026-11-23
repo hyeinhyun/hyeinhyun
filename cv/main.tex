@@ -70,6 +70,8 @@
 \setlist[tagged]{label=-, align=left, labelindent=1.4em, labelwidth=5.4em,
   labelsep=0.4em, leftmargin=7.2em, topsep=1pt, itemsep=0pt, parsep=0pt}
 \newcommand{\tg}[1]{\item[-\hspace{0.95em}\textsc{#1}]}
+% \lead : role marker after a project title
+\newcommand{\lead}{\enspace{\color{black!45}\textbar}\enspace\textbf{Technical Lead}}
 % \titled{Bold title}{Bold period}
 \newcommand{\titled}[2]{\par\vspace{3pt}\entry{\textbf{#1}}{\textbf{#2}}}
 
@@ -87,10 +89,10 @@ AI Research Engineer \textbar\ On-device Multimodal LLM Post-training (RL, Disti
 \section{Professional Experiences}
 
 \job{Samsung Research}{AI Research Engineer, Global AI Center (GAIC)}{Seoul, Korea \textbar\ 2021.9 -- Present}
-{\itshape\raggedright Post-trained an on-device multimodal LLM to near-SOTA and deployed it commercially; previously shipped
+{\itshape\raggedright Led the post-training of an on-device multimodal LLM to near-SOTA and its commercial deployment; previously shipped
 a 0.6B VLM on Galaxy S25+ and launched a multimodal RAG service (1,500 MAU).\par}
 
-\project{On-device multimodal LLM post-training}{2025.10 -- Present}
+\project{On-device multimodal LLM post-training\lead}{2025.10 -- Present}
 \begin{tagged}
   \tg{Model} Post-trained with RL and multi-teacher on-policy distillation, \textbf{bringing performance
         close to same-class open SOTA models}
