@@ -65,6 +65,11 @@
   \vspace{1pt}}
 % \project{Title}{Period}
 \newcommand{\project}[2]{\par\vspace{4pt}\entry{\textbullet\ #1}{\textit{#2}}}
+% tagged list: "-  MODEL   text" with wrapped lines aligned after the tag
+\newlist{tagged}{itemize}{1}
+\setlist[tagged]{label=-, align=left, labelindent=1.4em, labelwidth=5.4em,
+  labelsep=0.4em, leftmargin=7.2em, topsep=1pt, itemsep=0pt, parsep=0pt}
+\newcommand{\tg}[1]{\item[-\hspace{0.95em}\textsc{#1}]}
 % \titled{Bold title}{Bold period}
 \newcommand{\titled}[2]{\par\vspace{3pt}\entry{\textbf{#1}}{\textbf{#2}}}
 
@@ -73,7 +78,7 @@
 
 % ---------- Header ----------
 {\fontsize{24}{28}\selectfont\bfseries Hyein Hyun}\par\vspace{3pt}
-Research Engineer of Samsung Research, Global AI Center\par
+AI Research Engineer at Samsung Research \textbar\ From model development to on-device \& service deployment\par
 \href{mailto:hyunhi1123@gmail.com}{\underline{hyunhi1123@gmail.com}}%
 \sep\href{https://github.com/hyeinhyun}{https://github.com/hyeinhyun}%
 \sep 현혜인\par
@@ -82,41 +87,39 @@ Research Engineer of Samsung Research, Global AI Center\par
 \section{Professional Experiences}
 
 \job{Samsung Research}{AI Research Engineer, Global AI Center (GAIC)}{Seoul, Korea \textbar\ 2021.9 -- Present}
+{\itshape\raggedright Shipped a 0.6B VLM on Galaxy S25+, launched a multimodal RAG service (1,500 MAU),
+and now post-training a 3B on-device model.\par}
 
 \project{On-device AI model development for new Samsung devices (3B)}{2025.10 -- Present}
-\begin{itemize}
-  \item In charge of post-training: RL, OPD, MoPD
-\end{itemize}
+\begin{tagged}
+  \tg{Model} In charge of post-training: RL, OPD, MoPD
+  \tg{Edge} For deployment on new Samsung devices
+\end{tagged}
 
 \project{In-house Multimodal RAG system development \& service launch}{2024.10 -- 2025.10}
-\begin{itemize}
-  \item \textbf{Average monthly active users (MAU): 1,500} (launched 2025.12, as of 2026.06)
-  \item System infrastructure: designed an integrated architecture of a LangGraph-based RAG
-        pipeline and a FastAPI + Celery + Milvus + PostgreSQL backend
-  \item \textbf{Improved retrieval performance by 20\%} (in-house document benchmark)
-  \begin{itemize}
+\begin{tagged}
+  \tg{Model} \textbf{Improved retrieval performance by 20\%} (in-house document benchmark)
+  \begin{itemize}[label=\textendash, leftmargin=1.4em, labelsep=0.6em, topsep=0pt]
     \item +12\% by enhancing hybrid search (built a corpus of 350K Korean documents)
     \item Additional +8\% by applying a retrieval algorithm that integrates global \& local
           embeddings and developing an image captioner specialized for tables and charts
   \end{itemize}
-\end{itemize}
+  \tg{System} Designed an integrated architecture of a LangGraph-based RAG pipeline and a
+        FastAPI + Celery + Milvus + PostgreSQL backend
+  \tg{Service} \textbf{Launched in-house (2025.12), average 1,500 MAU} (as of 2026.06)
+\end{tagged}
 
 \project{VLM-based document retrieval model development (0.6B)}{2023.10 -- 2024.10}
-\begin{itemize}
-  \item \textbf{Deployed on Samsung devices (Galaxy S25 and later)}
-  \item Developed and applied a post-OCR correction algorithm using visual features and
-        linguistic knowledge
-\end{itemize}
+\begin{tagged}
+  \tg{Model} VLM-based document retrieval model; post-OCR correction algorithm using visual
+        features and linguistic knowledge
+  \tg{Edge} \textbf{Deployed on Samsung Galaxy devices (S25 and later)}
+\end{tagged}
 
-\project{Application about business card entity extraction project}{2023.3 -- 2023.7}
+\project{Earlier work: document AI \& model compression}{2022.4 -- 2023.7}
 \begin{itemize}
-  \item Developing business entity extraction model based on LiLT, LayoutLMv3
-  \item Customizing model for Korean and English business card dataset
-\end{itemize}
-
-\project{Light-weight OCR model using distillation}{2022.4 -- 2022.12}
-\begin{itemize}
-  \item Distillation model from ResNet-101 backbone OCR model to ResNet-18 backbone OCR model
+  \item Business card entity extraction model (LiLT, LayoutLMv3) for Korean and English cards
+  \item Light-weight OCR model via knowledge distillation (ResNet-101 $\rightarrow$ ResNet-18 backbone)
 \end{itemize}
 
 \vspace{6pt}
@@ -199,13 +202,14 @@ Research Engineer of Samsung Research, Global AI Center\par
 
 % ---------- Research interest ----------
 \section{Research Interest}
-\textbf{Multimodal Learning}: Vision Language Modeling\par
-\textbf{Document Intelligence}: Document Understanding, Scene Text Recognition\par
+\textbf{On-device AI}: LLM/VLM post-training (RL, distillation), model compression\par
+\textbf{Multimodal Learning}: Vision-language modeling, document understanding, multimodal retrieval \& RAG\par
 
 % ---------- Skills ----------
 \section{Programming Skills}
 \textbf{Advanced}: Python (PyTorch, TensorFlow), Java\par
 \textbf{Moderate}: C++, C\par
+\textbf{Serving \& Systems}: LangGraph, FastAPI, Celery, Milvus, PostgreSQL\par
 
 % ---------- Other experience ----------
 \section{Other Experience}
