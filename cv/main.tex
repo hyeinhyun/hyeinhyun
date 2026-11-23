@@ -78,7 +78,7 @@
 
 % ---------- Header ----------
 {\fontsize{24}{28}\selectfont\bfseries Hyein Hyun}\par\vspace{3pt}
-AI Research Engineer at Samsung Research \textbar\ From model development to on-device \& service deployment\par
+AI Research Engineer \textbar\ On-device Multimodal LLM Post-training (RL, Distillation)\par
 \href{mailto:hyunhi1123@gmail.com}{\underline{hyunhi1123@gmail.com}}%
 \sep\href{https://github.com/hyeinhyun}{https://github.com/hyeinhyun}%
 \sep 현혜인\par
@@ -87,13 +87,20 @@ AI Research Engineer at Samsung Research \textbar\ From model development to on-
 \section{Professional Experiences}
 
 \job{Samsung Research}{AI Research Engineer, Global AI Center (GAIC)}{Seoul, Korea \textbar\ 2021.9 -- Present}
-{\itshape\raggedright Shipped a 0.6B VLM on Galaxy S25+, launched a multimodal RAG service (1,500 MAU),
-and now post-training a 3B on-device model.\par}
+{\itshape\raggedright Post-trained an on-device multimodal LLM to near-SOTA and deployed it commercially; previously shipped
+a 0.6B VLM on Galaxy S25+ and launched a multimodal RAG service (1,500 MAU).\par}
 
-\project{On-device AI model development for new Samsung devices (3B)}{2025.10 -- Present}
+\project{On-device multimodal LLM post-training \& commercial deployment}{2025.10 -- Present}
 \begin{tagged}
-  \tg{Model} In charge of post-training: RL, OPD, MoPD
-  \tg{Edge} For deployment on new Samsung devices
+  \tg{Model} Built an in-house RL training environment by patching VeRL; established an
+        expert-distillation methodology through multi-teacher distillation training and ablations
+        on open proxy and target models
+  \tg{Result} \textbf{Brought performance close to same-class open SOTA models}; outperformed
+        same-class open models on multiple vision benchmarks
+  \tg{Edge} \textbf{Deployed as a commercial model} with RL and on-policy distillation (OPD)
+  \tg{Eval} Built and operate a unified leaderboard comparing open and in-house models on 20 vision and
+        6 language open benchmarks, the single source for all model evaluations
+  \tg{Demo} Showcased at Open Lab and a tech exhibition; led Open Lab preparation and operation
 \end{tagged}
 
 \project{In-house Multimodal RAG system development \& service launch}{2024.10 -- 2025.10}
@@ -202,13 +209,14 @@ and now post-training a 3B on-device model.\par}
 
 % ---------- Research interest ----------
 \section{Research Interest}
-\textbf{On-device AI}: LLM/VLM post-training (RL, distillation), model compression\par
+\textbf{On-device AI}: multimodal LLM post-training (RL, on-policy distillation), evaluation, model compression\par
 \textbf{Multimodal Learning}: Vision-language modeling, document understanding, multimodal retrieval \& RAG\par
 
 % ---------- Skills ----------
 \section{Programming Skills}
 \textbf{Advanced}: Python (PyTorch, TensorFlow), Java\par
 \textbf{Moderate}: C++, C\par
+\textbf{LLM Training}: VeRL (RL, on-policy distillation)\par
 \textbf{Serving \& Systems}: LangGraph, FastAPI, Celery, Milvus, PostgreSQL\par
 
 % ---------- Other experience ----------
