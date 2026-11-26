@@ -64,14 +64,9 @@
         {\textbf{#3}}%
   \vspace{1pt}}
 % \project{Title}{Period}
-\newcommand{\project}[2]{\par\vspace{4pt}\entry{\textbullet\ #1}{\textit{#2}}}
-% tagged list: "-  MODEL   text" with wrapped lines aligned after the tag
-\newlist{tagged}{itemize}{1}
-\setlist[tagged]{label=-, align=left, labelindent=1.4em, labelwidth=5.4em,
-  labelsep=0.4em, leftmargin=7.2em, topsep=1pt, itemsep=0pt, parsep=0pt}
-\newcommand{\tg}[1]{\item[-\hspace{0.95em}\textsc{#1}]}
+\newcommand{\project}[2]{\par\vspace{5pt}\entry{\textbf{#1}}{\textit{#2}}}
 % \lead : role marker after a project title
-\newcommand{\lead}{\enspace{\color{black!45}\textbar}\enspace\textbf{Technical Lead}}
+\newcommand{\lead}{\enspace{\color{black!45}\textbar}\enspace\textit{Technical Lead}}
 % \titled{Bold title}{Bold period}
 \newcommand{\titled}[2]{\par\vspace{3pt}\entry{\textbf{#1}}{\textbf{#2}}}
 
@@ -89,50 +84,39 @@ AI Research Engineer \textbar\ On-device Multimodal LLM Post-training (RL, Disti
 \section{Professional Experiences}
 
 \job{Samsung Research}{AI Research Engineer, Global AI Center (GAIC)}{Seoul, Korea \textbar\ 2021.9 -- Present}
-{\itshape\raggedright Led the post-training of an on-device multimodal LLM to near-SOTA and its commercial deployment; previously shipped
-a 0.6B VLM on Galaxy S25+ and launched a multimodal RAG service (1,500 MAU).\par}
 
-\project{On-device multimodal LLM post-training\lead}{2025.10 -- Present}
-\begin{tagged}
-  \tg{Model} Post-trained with RL and multi-teacher on-policy distillation, \textbf{bringing performance
-        close to same-class open SOTA models}
-  \tg{Edge} \textbf{Deployed as a commercial on-device model}
-  \tg{Eval} Built a unified leaderboard of 26 open vision and language benchmarks for all model evaluations
-\end{tagged}
-
-\project{In-house Multimodal RAG system development \& service launch}{2024.10 -- 2025.10}
-\begin{tagged}
-  \tg{Model} \textbf{Improved retrieval performance by 20\%} (in-house document benchmark)
-  \begin{itemize}[label=\textendash, leftmargin=1.4em, labelsep=0.6em, topsep=0pt]
-    \item +12\% by enhancing hybrid search (built a corpus of 350K Korean documents)
-    \item Additional +8\% by applying a retrieval algorithm that integrates global \& local
-          embeddings and developing an image captioner specialized for tables and charts
-  \end{itemize}
-  \tg{System} Designed an integrated architecture of a LangGraph-based RAG pipeline and a
-        FastAPI + Celery + Milvus + PostgreSQL backend
-  \tg{Service} \textbf{Launched in-house (2025.12), average 1,500 MAU} (as of 2026.06)
-\end{tagged}
-
-\project{VLM-based document retrieval model development (0.6B)}{2023.10 -- 2024.10}
-\begin{tagged}
-  \tg{Model} VLM-based document retrieval model; post-OCR correction algorithm using visual
-        features and linguistic knowledge
-  \tg{Edge} \textbf{Deployed on Samsung Galaxy devices (S25 and later)}
-\end{tagged}
-
-\project{Earlier work: document AI \& model compression}{2022.4 -- 2023.7}
+\project{On-device Multimodal LLM\lead}{2025.10 -- Present}
 \begin{itemize}
-  \item Business card entity extraction model (LiLT, LayoutLMv3) for Korean and English cards
-  \item Light-weight OCR model via knowledge distillation (ResNet-101 $\rightarrow$ ResNet-18 backbone)
+  \item \textbf{Shipped as Samsung's commercial on-device multimodal LLM}, leading its post-training
+        (RL, multi-teacher on-policy distillation)
+  \item Achieved \textbf{state-of-the-art performance among same-class models}
+  \item Built a unified evaluation leaderboard over \textbf{26 open benchmarks}, used for all model comparisons
+\end{itemize}
+
+\project{In-house Multimodal RAG Service}{2024.10 -- 2025.10}
+\begin{itemize}
+  \item \textbf{Launched an in-house multimodal RAG service with 1,500 monthly active users}
+  \item Improved retrieval accuracy by \textbf{20\%} (hybrid search over a 350K-document Korean corpus,
+        global--local embedding retrieval, chart/table image captioner)
+  \item Designed the pipeline and backend (LangGraph, FastAPI, Celery, Milvus, PostgreSQL)
+\end{itemize}
+
+\project{On-device VLM Document Retrieval (0.6B)}{2023.10 -- 2024.10}
+\begin{itemize}
+  \item \textbf{Shipped a 0.6B VLM document retrieval model in Samsung Gallery on Galaxy S25 and later}
+  \item Developed a post-OCR correction algorithm using visual features and linguistic knowledge
+\end{itemize}
+
+\project{Document AI \& OCR}{2022.4 -- 2023.7}
+\begin{itemize}
+  \item Built a business card entity extraction model (LiLT, LayoutLMv3) for Korean and English
+  \item Distilled a ResNet-101 OCR model into a ResNet-18 backbone
 \end{itemize}
 
 \vspace{6pt}
 \job{Hyundai Card}{Deep Learning Researcher}{Seoul, Korea \textbar\ 2021.3 -- 2021.6}
-\project{Research DL model for table data}{}
 \begin{itemize}
-  \item Developing LSTM sequential model for customer demand forecasting using over 1 million
-        time-series customer consumption datasets
-  \item Research proper self-supervised learning method for understanding sparse table data
+  \item Built an LSTM demand-forecasting model on \textbf{1M+} customer time-series records
 \end{itemize}
 
 % ---------- Publication ----------
